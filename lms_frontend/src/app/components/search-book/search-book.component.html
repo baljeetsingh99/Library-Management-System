@@ -1,0 +1,45 @@
+<app-navbar>showNavBar</app-navbar>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Search for a Book</h2>
+
+
+  <div class="form-group">
+    <input
+      type="text"
+      [(ngModel)]="searchTitle"
+      placeholder="Enter book title"
+      class="form-control"
+    />
+  </div>
+
+
+  <button (click)="searchBook()" class="btn btn-primary mb-4">Search</button>
+
+
+  <div *ngIf="searchResults.length > 0">
+    <h3>Search Results</h3>
+    <div class="list-group">
+      <a *ngFor="let book of searchResults" class="list-group-item list-group-item-action">
+        <h5 class="mb-1">{{ book.title }}</h5>
+        <h6 class="mb-1 text-muted">Author: {{ book.author }}</h6>
+        <p class="mb-1">
+          <strong>Status:</strong> {{ book.status }}<br />
+          <strong>Quantity:</strong> {{ book.bookQuantity }}
+        </p>
+        <div *ngIf="book.issuedTo && book.issuedTo.length > 0">
+          <strong>Issued To:</strong>
+          <ul class="list-unstyled mb-0">
+            <li *ngFor="let user of book.issuedTo">
+              {{ user.name }} ({{ user.email }}) - ID: {{ user.id }}
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <div *ngIf="searchResults.length === 0 && searchTitle.length > 0" class="mt-4">
+    <p class="alert alert-warning">No books found for "{{ searchTitle }}".</p>
+  </div>
+</div>

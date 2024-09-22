@@ -1,0 +1,22 @@
+app-navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+}
+:host {
+    display: block;
+    background-image: url('/assets/returnImg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    padding: 90px; 
+    color: white; 
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+    padding: 10px; 
+}

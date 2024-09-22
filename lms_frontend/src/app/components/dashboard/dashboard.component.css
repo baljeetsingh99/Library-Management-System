@@ -1,0 +1,38 @@
+app-navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0; 
+}
+:host {
+    display: block;
+    background-image: url('/assets/allBooks.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh;
+    padding: 95px; 
+    color: white; 
+}
+
+.container {
+    width: 100%; 
+    padding: 20px; 
+}
+
+.table {
+    width: 100%; 
+}
+
+.table-body {
+    display: block; 
+    max-height: 410px; 
+    overflow-y: auto; 
+    width: 100%;
+}
+
+.table tr {
+    display: table; 
+    table-layout: fixed; 
+    width: 100%; 
+}
