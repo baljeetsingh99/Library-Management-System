@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Return Book</title>
+</head>
+<body>
+<h1>Return a Book</h1>
+<form action="#" th:action="@{/books/return}" th:object="${bookForm}" method="post">
+    <label for="bookId">Book ID:</label>
+    <input type="text" id="bookId" th:field="*{bookId}" required />
+
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" th:field="*{userId}" required />
+
+    <button type="submit">Return Book</button>
+</form>
+<p th:if="${message}" th:text="${message}"></p>
+<a href="#" th:href="@{/about}">Back to About</a>
+</body>
+</html>
